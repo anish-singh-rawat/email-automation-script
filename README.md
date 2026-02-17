@@ -71,6 +71,28 @@ source venv/bin/activate
 python send_emails.py
 ```
 
+Gmail App Password (for `.env`)
+
+- If you use Gmail for SMTP, generate an App Password and store it in your `.env` instead of your regular Google password. Steps:
+
+  1. Go to https://myaccount.google.com/security
+  2. Turn ON 2-Step Verification for your Google account
+  3. In the "Security" page search for **App passwords** and open it
+  4. Choose **App → Mail** and **Device → Other** (give a name like "EmailAutomation")
+  5. Click **Generate** and copy the 16-character password (looks like: `abcd efgh ijkl mnop`)
+
+- Put that value into your `.env` (example):
+
+```env
+# example values — check send_emails.py for exact names
+SMTP_EMAIL=you@example.com
+SMTP_PASSWORD=abcd efgh ijkl mnop
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+```
+
+- Note: App Passwords require 2-Step Verification and are safer than storing your primary Google password.
+
 Environment variables
 - The project uses `python-dotenv`. Create a `.env` file in the project root with the SMTP credentials and any configuration `send_emails.py` expects (for example SMTP user, password, host, port). See `send_emails.py` for exact variable names.
 
