@@ -12,15 +12,15 @@ import os
 # ----------------------------
 load_dotenv()
 sender_email = os.getenv("EMAIL_USER")
-sender_password = os.getenv("EMAIL_PASS")  # App password for Gmail
+sender_password = os.getenv("EMAIL_PASS") 
 
 # ----------------------------
 # Read CSV file
 # ----------------------------
 df = pd.read_csv("hr_contacts.csv")
-df.columns = df.columns.str.strip()  # remove leading/trailing spaces in headers
+df.columns = df.columns.str.strip() 
 
-print("Columns in CSV:", df.columns.tolist())  # Optional debug
+print("Columns in CSV:", df.columns.tolist()) 
 
 # ----------------------------
 # Setup SMTP server
@@ -34,7 +34,7 @@ try:
     server.login(sender_email, sender_password)
     print("✅ Logged in to SMTP server")
 except Exception as e:
-    print(f"❌ Failed to connect/login to SMTP: {e}")
+    print(f"Failed to connect/login to SMTP: {e}")
     exit()
 
 # ----------------------------
@@ -48,17 +48,17 @@ for index, row in df.iterrows():
     # ----------------------------
     # Email content
     # ----------------------------
-    subject = f"Job Application And Interview Request For Frontend React and MERN Developer"
+    subject = f"Job Application And Interview Request For Full (MERN) stack Developer Position"
     body = f"""
-Hiii  Good afternoon Mam,
+Hiii  Good morning mam,
 Greetings of the day.
-As an IT professional with over 2+ years of experience in the fields of software development , I believe I have the qualification and skills necessary to excel in this role.
+As an IT professional with over 2.6+ years of experience in the fields of software development , I believe I have the qualification and skills necessary to excel in this role.
 
-In my most recent role at Quadb tech pvt ltd , I worked as a full stack web developer, where I was responsible for creating a fully dynamic accounting and CRM website with very smoothness. I am highly motivated and able to work effectively under presure, both independently and as a part of my team. My ability to collaborate with colleagues and communicate complex technical information clearly allows me to ensure that developments are resolved quickly and efficiently.
+In my most recent role at Quadb tech pvt ltd, I worked as a full stack web developer, where I was responsible for creating a fully dynamic E commerce, accounting & CRM website with very smoothness. I am highly motivated and able to work effectively under presure, both independently and as a part of my team. My ability to collaborate with colleagues and communicate complex technical information clearly allows me to ensure that developments are resolved quickly and efficiently.
 
 In addition to my experience, I possess a strong set of technical skills , including skills , including expertise in various programming languages . I am also proficient in Windows and Linux operating systems . Moreover , I hold a certificate  Full stack developer from Ducat-India.
 
-Thank you!
+Thank you! Regards
 Anish Singh Rawat
 """
     # ----------------------------
@@ -73,7 +73,7 @@ Anish Singh Rawat
     # ----------------------------
     # Optional: Attach resume
     # ----------------------------
-    filename = "Resume.pdf"  # change to your resume file name
+    filename = "Resume.pdf"
     if os.path.exists(filename):
         with open(filename, "rb") as attachment:
             part = MIMEBase("application", "octet-stream")
@@ -85,17 +85,12 @@ Anish Singh Rawat
         )
         msg.attach(part)
 
-    # ----------------------------
-    # Send email
-    # ----------------------------
     try:
         server.sendmail(sender_email, email, msg.as_string())
         print(f"✅ Email sent to {name} ({email})")
     except Exception as e:
         print(f"❌ Failed to send email to {email}: {e}")
 
-# ----------------------------
-# Close SMTP connection
-# ----------------------------
+
 server.quit()
 print("✅ All emails processed, server connection closed")
