@@ -114,3 +114,6 @@ python -m pip install --upgrade pip
 If something still fails, paste the terminal output and I will help debug.
 
 Happy coding!
+
+source venv/bin/activate
+python send_emails.py
