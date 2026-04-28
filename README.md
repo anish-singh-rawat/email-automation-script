@@ -115,5 +115,17 @@ If something still fails, paste the terminal output and I will help debug.
 
 Happy coding!
 
+
+# Full stack developer 
 source venv/bin/activate
-python send_emails.py
+python full_stack_emails.py
+
+
+# Frontend developer 
+source venv/bin/activate
+python frontend_email.py
+
+
+# backend developer
+source venv/bin/activate
+python backend_email.py
