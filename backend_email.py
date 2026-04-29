@@ -48,13 +48,13 @@ for index, row in df.iterrows():
     # ----------------------------
     # Email content
     # ----------------------------
-    subject = f"Job Application And Interview Request For Backend stack Developer Position"
+    subject = f"Job Application And Interview Request For Backend (Node js) Developer Position"
     body = f"""
 Hiii  Good morning mam,
 Greetings of the day.
 As an IT professional with over 2.6+ years of experience in the fields of software development , I believe I have the qualification and skills necessary to excel in this role.
 
-In my most recent role at Quadb tech pvt ltd, I worked as a backend stack developer, where I was responsible for creating a fully dynamic E commerce, accounting & CRM website with very smoothness. I am highly motivated and able to work effectively under presure, both independently and as a part of my team. My ability to collaborate with colleagues and communicate complex technical information clearly allows me to ensure that developments are resolved quickly and efficiently.
+In my most recent role at Quadb tech pvt ltd, I worked as a backend (Node js) developer, where I was responsible for creating a fully dynamic E commerce, accounting & CRM website with very smoothness. I am highly motivated and able to work effectively under presure, both independently and as a part of my team. My ability to collaborate with colleagues and communicate complex technical information clearly allows me to ensure that developments are resolved quickly and efficiently.
 
 In addition to my experience, I possess a strong set of technical skills , including skills , including expertise in various programming languages . I am also proficient in Windows and Linux operating systems . Moreover , I hold a certificate  Full stack developer from Ducat-India.
 
