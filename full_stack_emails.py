@@ -48,7 +48,7 @@ for index, row in df.iterrows():
     # ----------------------------
     # Email content
     # ----------------------------
-    subject = f"Job Application And Interview Request For Full (MERN) stack Developer Position"
+    subject = f"Job Application And Interview Request For Full (MERN, React & Node js) stack Developer Position"
     body = f"""
 Hiii  Good morning mam,
 Greetings of the day.
